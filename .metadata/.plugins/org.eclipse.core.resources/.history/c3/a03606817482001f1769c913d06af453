@@ -1,0 +1,48 @@
+package StaticKeyword;
+
+class Company {
+   
+    private static int employeeCount = 0;
+
+   
+    private String name;
+    private int id;
+
+    
+    public Company(String name) {
+        this.name = name;
+        this.id = ++employeeCount;  
+    }
+
+    
+    public static int getTotalEmployees() {
+        return employeeCount;
+    }
+
+    
+    public void displayEmployeeDetails() {
+        System.out.println("Employee ID: " + id + ", Name: " + name);
+    }
+
+    
+    public static void displayCompanyInfo() {
+        System.out.println("Company Name: XYZ Corp");
+        System.out.println("Total Employees: " + getTotalEmployees());
+    }
+
+    public static void main(String[] args) {
+        
+        Company emp1 = new Company("Alice");
+        Company emp2 = new Company("Bob");
+        Company emp3 = new Company("Charlie");
+
+       
+        emp1.displayEmployeeDetails();
+        emp2.displayEmployeeDetails();
+        emp3.displayEmployeeDetails();
+
+       
+        Company.displayCompanyInfo();
+    }
+}
+
